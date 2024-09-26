@@ -5,8 +5,8 @@ import java.util.HashMap;
 public class Example {
 
     public static void main(String[] args) {
-    //     String[][] values = {  [ "Bobby", "87" ]  [ "Charles", "100" ]  [ "Eric", "64" ] [ "Charles", "22" ] };
-    //     bestAverageGrade()
+        String[][] values = {  { "Bobby", "87" } , { "Charles", "100" } , { "Eric", "64" } ,{ "Charles", "22" } };
+        System.out.println(bestAverageGrade(values))        ;
      }
     public static Integer bestAverageGrade(String[][] scores) { 
         HashMap<String,int[]> hmap = new HashMap<>();

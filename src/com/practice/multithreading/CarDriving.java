@@ -3,9 +3,12 @@ class Car {
     private int currentDriverId = 1; // Keeps track of the driver whose turn it is
 
     public synchronized void drive(int driverId) {
-        while (driverId != currentDriverId) {
-            if(currentDriverId == 2)
-                System.out.println("yes");
+        while (driverId != currentDriverId) {  
+            /**if (driverId != currentDriverId) {  if i use
+             if then when thread wakes up from waiting state it starts execution without checking condition
+             This may lead inconsistent behavior. So must we need to use while....
+             */
+            System.out.println(driverId );
             try {
                 wait(); // Wait if it's not this driver's turn
             } catch (InterruptedException e) {
