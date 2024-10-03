@@ -3,7 +3,10 @@ package com.practice.Generics;
 import java.util.ArrayList;
 import java.util.List;
 
-class Building{
+class B{
+
+}
+class Building extends B{
 
 }
 
@@ -43,6 +46,12 @@ public class Generics {
          * There are two types   1. UpperBound wild card  ( ? extends T )
          *                       2. LowerBound wild card  (? super T )
          */
+
+         List<B> list4 = new ArrayList<>();
+         list4.add(new B());
+         list4.add(new B());
+         new Generics().insertElement(list4); //this allowed because it allows object and it's super types.
+        // new Generics().printBuilding(list4); //This throw error because it only accepts Building or it's subclasses.
 
         List<one_BHK_house> list3 = new ArrayList<>();
         list3.add(new one_BHK_house());
