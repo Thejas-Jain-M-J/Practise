@@ -17,8 +17,12 @@ public class FlatMap {
 
 
 		List<String> flattenedList = listOfLists.stream()
+		        .peek(i -> System.out.println(" i "+i))
 				.flatMap(i -> i.stream())
+				.peek(i -> System.out.println(" j "+i))
 				.collect(Collectors.toList());
+
+		System.out.println("flattenedList "+flattenedList);
 
 		System.out.println("-------------------------------------------------------");
 		System.out.println();

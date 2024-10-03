@@ -8,7 +8,7 @@ import java.util.List;
  * @author tjainmj
  *
  *Immutable class example 
- *<------ Make class as final so subclass can't extend this one  ----->
+ *<------ Make class as final so subclass can't extend this one and can't override it   ----->
  *<------ Don't provide setters. Give only getters. ----->
  *<------ Make all variables as private final. so it can't be modified. ----->
  *<------ No need to make constructor private ----->

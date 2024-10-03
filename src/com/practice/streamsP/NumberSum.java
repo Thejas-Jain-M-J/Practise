@@ -91,9 +91,9 @@ public class NumberSum {
 
     Character firstNonRepative = input.chars()
         .mapToObj(s -> Character.toLowerCase(Character.valueOf((char) s)))
-        .collect(Collectors.groupingBy(i -> i, LinkedHashMap::new, Collectors.counting()))
-        // .collect(Collectors.toMap(Function.identity(), v -> 1L, (count1, count2) ->
-        // count1 + count2, LinkedHashMap::new))
+        //.collect(Collectors.groupingBy(i -> i, LinkedHashMap::new, Collectors.counting()))
+        .collect(Collectors.toMap(Function.identity(), v -> 1L, (count1, count2) ->
+         count1 + count2, LinkedHashMap::new))
         .entrySet()
         .stream()
         .filter(i -> i.getValue() == 1)
