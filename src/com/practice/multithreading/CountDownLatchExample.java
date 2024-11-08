@@ -26,9 +26,18 @@ public class CountDownLatchExample {
         WorkerThread worker2 = new WorkerThread("Worker 2", 2000, latch);
         WorkerThread worker3 = new WorkerThread("Worker 3", 3000, latch);
 
+        /**
+         * we can use join also to make other threads to wait until one thread finishes it's
+         * execution. But here only one thread will do it's execution but other threads has to wait
+         * but in case of countdown latch only one thread is waiting(main thread) and other
+         * threads do their concurrent execution.
+         */
         worker1.start();
+        //worker1.join();
         worker2.start();
+        //worker2.join();
         worker3.start();
+        //worker3.join();
 
         latch.await();
         System.out.println("All workers have completed their tasks. Main thread resumes.");

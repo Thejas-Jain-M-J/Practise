@@ -87,7 +87,11 @@ public class NumberSum {
     System.out.println();
     System.out.println("--------------------------------------------------------------------------");
 
+    /**
+     * Print the first non-repetitive character
+     */
     String input = "Java Hungry Blog Alive is Awesome";
+
 
     Character firstNonRepative = input.chars()
         .mapToObj(s -> Character.toLowerCase(Character.valueOf((char) s)))
@@ -104,6 +108,9 @@ public class NumberSum {
     System.out.println("First non repetitive character is " + firstNonRepative);
     System.out.println("---------------------------------------------------------------------");
 
+    /**
+     * Join these array of strings
+     */
     String[] s1 = { "My","Name","Is","Thejas"};
 
     String resultString = Arrays.stream(s1)

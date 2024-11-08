@@ -29,7 +29,7 @@ import java.util.concurrent.ExecutionException;
  *
  * -> Even though callable is there it cannot handle asynchronous execution still it needs 
  *    executor service and future to work.
- * 
+ *
  * -> So that's why future introduced to solve problems which is there in multithreading.
  *   1. Once thread start executing task we cannot cancel it but in future we can do it.
  *   2. We can check whether the thread completes it's execution or not.But in future API we 
@@ -39,7 +39,7 @@ import java.util.concurrent.ExecutionException;
  *     throw timeout exception.
  *   4. In multithreading there is no ways to collect the result but in future there is get() 
  *      to get tge output.
- * 
+ *
  *
  * -> In java 5 future Api was introduced to promote asynchronous programming.
  * - we cannot chain the multiple futures.
@@ -52,7 +52,8 @@ import java.util.concurrent.ExecutionException;
  * And other thing like if we call some external entity that is done then future
  * will
  * until the response comeback. with this some times we need to wait infinite
- * time.
+ * time. if we do future.get()   -> after this line got executed main thread wll wait until it
+ * returns the output.
  *
  * Because of this reasons completable future introduced in JAVA 8
  *

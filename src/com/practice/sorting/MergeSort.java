@@ -62,7 +62,7 @@ System.out.println("Left array starts");
     {
         if(l<r)
         {
-            int m=l+(r-l)/2;
+            int m=(l+r)/2;
 
             sort(arr,l,m);
             sort(arr,m+1,r);

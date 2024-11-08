@@ -1,5 +1,7 @@
 {
     "cSpell.words": [
+        "Flipcart",
         "Thejas"
-    ]
+    ],
+    "java.debug.settings.onBuildFailureProceed": true
 }

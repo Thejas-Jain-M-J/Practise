@@ -24,7 +24,7 @@ public class CyclicBarrierExample {
 		for (int i = 0; i < NUM_PLAYERS; i++) {
 			Thread player = new Thread(new Player(i));
 			player.start();
-		}
+		} 
 	}
 
 	static class Player implements Runnable {

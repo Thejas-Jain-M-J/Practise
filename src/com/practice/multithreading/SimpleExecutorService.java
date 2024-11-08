@@ -14,8 +14,7 @@ import java.util.concurrent.locks.Lock;
  * 2.newCachedThreadPool()  ->It creates new thread as and when it's required. It reuses the
  * previously created threads. But we shouldn't assign that take long time to run, as it will
  * creates more number of threads as task submitted then it make take whole system down.
- * Bounded Queue is used to hold excessive tasks.
- *
+ * There is no upper bound for creating threads.
  *
  * 3.newSingleThreadExecutor() -> As name tells only one thread will be created. That thread
  * will sequentially execute the all tasks.
@@ -33,6 +32,13 @@ public class SimpleExecutorService {
         };
 
         //MyThread a = new MyThread(())
+        /**
+         * execute() will not return anything just it executes the transaction. only runnable
+         * can be submitted 
+         * 
+         * submit() will execute and return future object(). Both runnable and callable can be
+         * submitted.
+         */
         es.execute(new MyThread("A"));
         es.execute(new MyThread("B"));
         es.execute(new MyThread("C"));

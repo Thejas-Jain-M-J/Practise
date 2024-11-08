@@ -169,7 +169,7 @@ System.out.println(result);
          * FInd how many numbers are there still Number N.
          * input: 13
          * output: 6
-         * 
+         *
          * Long totalOnes = IntStream.range(0, n)
          * .boxed()
          * .map(i -> String.valueOf(i)) // Convert each int to String
@@ -178,7 +178,7 @@ System.out.println(result);
          * .filter(ch -> ch == '1') // Filter only '1' characters
          * .count()) // Count the '1's in the string
          * .sum(); // Sum up the counts
-         * 
+         *
          * This solution without using flat map
          * If we have string then if we want iterate we can use str.chars()
          */
@@ -248,6 +248,15 @@ System.out.println(result);
                 .findFirst();
 
         System.out.println("secondHighest " + secondHighest);
+
+        // i/p: orange, apple, mango
+        // o/p: Orange, Apple, Mango
+
+        String[] strArr = {"orange", "apple", "mango"};
+        
+        Arrays.stream(strArr)
+        .map(word -> Character.toUpperCase(word.charAt(0)) + word.substring(1).toLowerCase())
+        .forEach(word -> System.out.println(word));
 
     }
 

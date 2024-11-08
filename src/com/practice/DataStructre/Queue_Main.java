@@ -7,10 +7,10 @@ import java.util.Map;
 // 2. Pop the element from the beginning of the data structure( pop the earliest element added, O(1) time complexity) - int pop()
 // 3. Seek an element at index i at any given state of the data structure. (O(1) time complexity) - int seek(int index)
 
-public class CustomizedDataStructre {
-    public static void main(String[] args) {
+public class Queue_Main {
+    public static void main(String[] args) throws InterruptedException {
 
-        MyCustomizedDataStructure ds = new MyCustomizedDataStructure();
+        Queue<Integer> ds = new Queue<>();
 
         ds.push(1);
         ds.push(2);
@@ -24,28 +24,67 @@ public class CustomizedDataStructre {
         System.out.println("seek " + ds.seek(1));
 
         ds.push(4);
-        System.out.println(ds.seek(2));
+        System.out.println(ds);
+        System.out.println("seek " +ds.seek(0));
+
+        // Queue<String> str = new Queue<>();
+
+        // str.push("Thejas");
+        // str.push("Shreyas");
+        // str.push("Rishika");
+        // str.push("Swasthi");
+
+        // System.out.println(str);
+
+        // Queue<Integer> q =new Queue<>();
+
+        // Thread t1 =new Thread(() -> {
+        //     for(int i=0;i<5;i++)
+        //     {
+        //         q.push(i);
+        //         System.out.println("Thread 1 pushed: " + i);
+        //         //q.pop();
+        //     }
+        // });
+        // t1.start();
+
+        
+        // Thread t2 =new Thread(() -> {
+        //     for(int i=0;i<5;i++)
+        //     {
+        //         q.push(i);
+        //       //  q.pop();
+        //         System.out.println("Thread 2 pushed: " + i);
+        //     }
+        // });
+        // t2.start();
+        // Thread.sleep(2000);
+        // System.out.println(q);
+
+
+
+
 
     }
 }
 
-class MyCustomizedDataStructure {
+class Queue<T> {
 
-    private final Map<Integer, Integer> map = new HashMap<>();
+    private final Map<Integer, T> map = new HashMap<>();
     private int headIndex = -1;
     private int endIndex = -1;
 
-    public void push(int value) {
+    public  void push(T value) {
 
         if (map.isEmpty()) {
             map.put(++headIndex, value);
             ++endIndex;
         }
-        map.put(endIndex++, value);
+        map.put(++endIndex, value);
 
     }
 
-    public void pop() {
+    public synchronized void pop() {
         if (map.isEmpty()) {
             throw new RuntimeException("Nothing to remove as no elements present");
         }
@@ -54,7 +93,7 @@ class MyCustomizedDataStructure {
 
     }
 
-    public int seek(int index) {
+    public T seek(int index) {
         if (map.isEmpty()) {
             throw new RuntimeException(" Nothing to seek as map is empty");
         }
