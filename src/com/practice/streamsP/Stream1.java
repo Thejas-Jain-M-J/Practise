@@ -6,12 +6,12 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-class Employee {
+class Employee123 {
     public int id;
     public String name;
     public int salary;
 
-    public Employee(int a, String b, int c) {
+    public Employee123(int a, String b, int c) {
         this.id = a;
         this.name = b;
         this.salary = c;
@@ -20,16 +20,20 @@ class Employee {
 
 class Stream1 {
     public static void main(String[] args) {
-        ArrayList<Employee> al = new ArrayList<Employee>();
-        al.add(new Employee(1, "Thejas", 30000));
-        al.add(new Employee(1, "Ranjith", 10000));
-        al.add(new Employee(1, "Shreyas", 40000));
-        al.add(new Employee(1, "Vishal", 20000));
-        al.add(new Employee(1, "Gautam", 20000));
+        ArrayList<Employee123> al = new ArrayList<>();
+        al.add(new Employee123(1, "Thejas", 30000));
+        al.add(new Employee123(1, "Ranjith", 10000));
+        al.add(new Employee123(1, "Shreyas", 40000));
+        al.add(new Employee123(1, "Vishal", 20000));
+        al.add(new Employee123(1, "Gautam", 20000));
         System.out.println("Hello, World!");
 
-        List<Employee> empList = al.stream()
-                .sorted(Comparator.comparing((Employee i) -> i.salary).thenComparing((j) -> j.name))
+        /**
+         * Sort based on salary
+         * If salary is same then sort based on Name.
+         */
+        List<Employee123> empList = al.stream()
+                .sorted(Comparator.comparing((Employee123 i) -> i.salary).thenComparing((j) -> j.name))
                 .collect(Collectors.toList());
 
         // IntStream.iterate(0, i->i+2)
@@ -43,7 +47,7 @@ class Stream1 {
         // .limit(100)
         // .forEach(System.out::println);
 
-        for (Employee i : empList) {
+        for (Employee123 i : empList) {
             System.out.println(i.name + "     " + i.salary);
         }
 
