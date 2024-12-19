@@ -7,7 +7,7 @@ public class EncodeString {
 
     public static void main(String[] args) {
         
-        String str  = "";
+        String str  = "aaabbc";
         int count=1;
         StringBuilder strBuilder = new StringBuilder();
         int i;

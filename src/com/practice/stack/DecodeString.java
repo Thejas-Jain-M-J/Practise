@@ -26,5 +26,7 @@ public class DecodeString {
             }
         }
         System.out.println("Decoded String "+resultString);
+
+        String str1 = "Thejas T";
     }
 }
