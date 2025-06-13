@@ -52,7 +52,7 @@ public class Boundary_Traversal {
 
         if(curr == null)
         {
-            return;
+            return; 
         }
         
         if(curr.right != null) rightTree(curr.right);

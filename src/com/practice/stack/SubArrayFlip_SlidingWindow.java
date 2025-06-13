@@ -36,7 +36,9 @@ public class SubArrayFlip_SlidingWindow {
         int max = Integer.MIN_VALUE;
         for(int i=0;i<arr.length;i++)
         {
+            
             maxEnding = maxEnding+arr[i];
+            System.out.println(arr[i] +"    maxEnding "+maxEnding);
             if(maxEnding <= 0)
             maxEnding = 0;
             max= Math.max(max,maxEnding);

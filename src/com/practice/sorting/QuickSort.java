@@ -46,7 +46,6 @@ void quickSort(int[] arr, int low, int high)
         quickSort(arr,low,i-1);
         quickSort(arr, i+1, high);
     }
-
 }
 
 static void printArray(int arr[])

@@ -21,7 +21,5 @@ public class SquareArea {
     double result = iarea.calculateSquareArea(3.0);
     System.out.println("result "+result);
     }
-    
-    
 
 }

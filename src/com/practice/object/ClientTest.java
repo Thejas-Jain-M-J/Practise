@@ -75,9 +75,19 @@ class ClientTest {
 
         System.out.println("Hash Set size: " + employees.size());
 
-        employee2.name = "rajeev";
+
+        //This below 3 lines will print hash size equal to 3 because we changed object and 
+        //adding it to set
+       // employee2 = new Employee("rajeev2", 24);
+        // employees.add(employee2);
         // System.out.println("After Hash Set size: "+employees.size());
-        // System.out.println(employees.contains(employee2));
+
+
+        //but only with below line chsnfe hash set size will not change until we re insert.
+        employee2.name = "rajeev2";
+        employees.add(employee2);
+        System.out.println("After Hash Set size: "+employees.size());
+
         // System.out.println("employee.hashCode(): " + employee.hashCode()
         // + " employee2.hashCode():" + employee2.hashCode());
 
