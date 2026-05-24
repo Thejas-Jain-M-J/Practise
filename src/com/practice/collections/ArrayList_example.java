@@ -1,21 +1,20 @@
 package com.practice.collections;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
 public class ArrayList_example {
 
     public static void main(String[] args) {
-        
+
         /**
          * How to make collections synchronized.
          * -> we can make collections synchronized by passing list to Collections.synchronizedList(list);
          * that will make list as thread safe.
          *-> But there is cache like it will be thread safe for only single operations or method call.
          *   If we are iterating over list then that code need to enclose in synchronized block. 
-         * 
+         *
          */
 
          List<String> list = new ArrayList<>();

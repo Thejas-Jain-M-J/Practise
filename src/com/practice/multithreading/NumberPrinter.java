@@ -55,5 +55,7 @@ public class NumberPrinter {
         int m = 10; // Number of threads
         NumberPrinter printer = new NumberPrinter(n, m);
         printer.printNumbers();
+        
+        
     }
 }

@@ -16,7 +16,6 @@ public class EmployeeQueries {
 
         List<Employee> employees = createEmployees();
 
-        
         //print employees name in each department
         employeesInEachDept(employees);
 

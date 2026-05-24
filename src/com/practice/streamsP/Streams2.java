@@ -70,7 +70,7 @@ public class Streams2 {
         averageAges.forEach((gender, avgAge) -> System.out.println(gender + "          " + avgAge));
 
         //predicate chaining used in filter operation
-        Predicate<Employee123> case1 = i -> i.getGender().equals("Male");
+       Predicate<Employee123> case1 =  i -> i.getGender().equals("Male");
         Predicate<Employee123> case2 = i -> i.getAge()>35;
         Predicate<Employee123> combinedPredicate = case1.and(case2);
 

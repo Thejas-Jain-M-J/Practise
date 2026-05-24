@@ -1,10 +1,11 @@
 package com.practice.multithreading;
 class Car {
-    private int currentDriverId = 1; // Keeps track of the driver whose turn it is
+    private volatile static int currentDriverId = 1; // Keeps track of the driver whose turn it is
 
     public synchronized void drive(int driverId) {
-        while (driverId != currentDriverId) {  
-            /**if (driverId != currentDriverId) {  if i use
+        //while (driverId != currentDriverId) {  
+            while (driverId != currentDriverId) {
+            /**{  if i use
              if then when thread wakes up from waiting state it starts execution without checking condition
              This may lead inconsistent behavior. So must we need to use while....
              */
@@ -50,9 +51,8 @@ class Driver implements Runnable {
 
 public class CarDriving {
     public static void main(String[] args) {
-        Car car = new Car();
         Thread[] drivers = new Thread[5];
-
+        Car car = new Car();
         // Create and start driver threads
         for (int i = 0; i < 5; i++) {
             drivers[i] = new Thread(new Driver(car, i + 1));

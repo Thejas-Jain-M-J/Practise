@@ -64,7 +64,7 @@ class Stream1 {
             System.out.println(i);
         }
 
-        System.out.println("---------------------------------------------------");
+        System.out.println("hhhh ---------------------------------------------------");
 
         List<Integer> empList1 = al.stream()
                 .map(emp -> emp.salary)
@@ -100,6 +100,7 @@ class Stream1 {
 
         List<String> flattenedList = Stream.of(arrayOfLists)
                 .flatMap(List::stream)
+                //.flatMap(i->i.stream())
                 .collect(Collectors.toList());
 
         System.out.println("flattenedList   " + flattenedList);

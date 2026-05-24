@@ -3,9 +3,13 @@ package com.practice.streamsP;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -258,6 +262,40 @@ System.out.println(result);
         .map(word -> Character.toUpperCase(word.charAt(0)) + word.substring(1).toLowerCase())
         .forEach(word -> System.out.println(word));
 
+        List<String> words1 = Arrays.asList("apple","apple1", "banana","banana1", "cherry", "cherry1");
+                Map<Character,List<String>> map = words1.stream()
+                .collect(Collectors.groupingBy(word-> word.charAt(0),HashMap::new,Collectors.mapping(i->i,Collectors.toList())));
+
+        System.out.println("map "+map);
+
+        String input = "apple banana cherry";
+
+        String result1 = Arrays.stream(input.split("\\s+"))
+        .max(Comparator.comparingInt(word ->
+        word.chars()
+        .mapToObj(i -> (char)i)
+        .collect((Collectors.groupingBy(Function.identity(), Collectors.counting())))
+        .values()
+        .stream()
+        .mapToInt(i -> i.intValue())
+        .max()
+        .orElse(0)))
+        .orElse(null);
+
+        System.out.println("result1 "+result1);
+
+        // String result2 = Arrays.stream(input.split("\\s+"))
+        // .max(Comparator.comparingInt(word ->
+        // word.chars()
+        // .mapToObj(i -> (char)i)
+        // .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+        // .values()
+        // .stream()
+        // .mapToInt(i -> i.intValue())
+        // .max()
+        // .orElse(0)))
+        // .orElse(null);
+                
     }
 
 }

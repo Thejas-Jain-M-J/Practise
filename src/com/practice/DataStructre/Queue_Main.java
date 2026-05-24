@@ -77,7 +77,7 @@ class Queue<T> {
     public  void push(T value) {
 
         if (map.isEmpty()) {
-            map.put(++headIndex, value);
+            map.put(0, value);
             ++endIndex;
         }
         map.put(++endIndex, value);

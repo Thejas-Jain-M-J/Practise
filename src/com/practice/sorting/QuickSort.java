@@ -22,7 +22,7 @@ int partition(int[] arr,int low, int high)
     swap(arr,low,k);
     for(int j=0;j<arr.length;j++)
     {
-        System.out.println(arr[j]);
+        System.out.print(arr[j]+" ");
     }
     System.out.println("Array ends");
     System.out.println("k "+k);

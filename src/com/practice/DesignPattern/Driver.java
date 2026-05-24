@@ -7,12 +7,11 @@ package com.practice.DesignPattern;
 	private int salary;
 	private String company;
 	
-	public BuilderDesignPattern(int id, String name, int salary, String company) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.salary = salary;
-		this.company = company;
+	public BuilderDesignPattern(Builder builder) {
+		this.id = builder.getId();
+		this.name = builder.getName();
+		this.salary = builder.getSalary();
+		this.company = builder.getCompany();
 	}
 
 	public int getId() {
@@ -29,6 +28,11 @@ package com.practice.DesignPattern;
 
 	public String getCompany() {
 		return company;
+	}
+
+	public String toString() {
+		return "BuilderDesignPattern [id=" + id + ", name=" + name + ", salary=" + salary + ", company=" + company
+				+ "]";
 	}
 
 }
@@ -69,7 +73,7 @@ class Builder{
 	
 	public BuilderDesignPattern build()
 	{
-		return new BuilderDesignPattern(id,name,salary,company);
+		return new BuilderDesignPattern(this);
 	}
 }
 

@@ -32,6 +32,7 @@ public class FlatMap {
 		System.out.println();
 		String s = "I am the new Boss. so I am here the I";
 
+
 		Entry<String, Long> h1 = Arrays.stream(s.split(" "))
 				.collect(Collectors.groupingBy(i -> i, LinkedHashMap::new, Collectors.counting()))
 				.entrySet()

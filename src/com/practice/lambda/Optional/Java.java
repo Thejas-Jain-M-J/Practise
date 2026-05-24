@@ -18,7 +18,7 @@ public class Java {
             System.out.println(name.get());  // Prints "John" if present
         }
 
-        
+
         String result = nullableName.orElse("Default Name");  // Returns "Default Name" if empty
 
 

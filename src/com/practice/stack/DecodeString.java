@@ -22,7 +22,7 @@ public class DecodeString {
 
             }else
             {
-                c = (str.charAt(i));
+                c = str.charAt(i);
             }
         }
         System.out.println("Decoded String "+resultString);
